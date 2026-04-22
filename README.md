@@ -1,36 +1,165 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# AI Social Media Studio
 
-## Getting Started
+Transform your ideas into stunning, viral social media content with AI. Generate polished Instagram carousels, posts, and stories in seconds.
 
-First, run the development server:
+![AI Social Media Studio](https://img.shields.io/badge/Next.js-16.2.4-black?style=for-the-badge&logo=next.js)
+![React](https://img.shields.io/badge/React-19.2.4-61DAFB?style=for-the-badge&logo=react)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-4.0-38B2AC?style=for-the-badge&logo=tailwind-css)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.0-3178C6?style=for-the-badge&logo=typescript)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## ✨ Features
+
+- 🤖 **AI-Powered Content Generation** - Turn any idea into viral social media content
+- 🎨 **Visual Generation** - AI-generated images for each slide
+- 📱 **Instagram Formats** - Support for Post (1:1), Story (9:16), and Carousel formats
+- ✏️ **Inline Editing** - Click to edit slide titles and content
+- 🔄 **Smart Regeneration** - Regenerate individual slides without losing your work
+- 💾 **Download as PNG** - Export your creations as high-quality images
+- 🌙 **Dark/Light Mode** - Fully functional theme toggle with persistence
+- 📜 **Generation History** - Keep track of your recent creations
+- 📋 **Copy to Clipboard** - Easy copying of slide content
+- 🎬 **Smooth Animations** - Beautiful transitions powered by Framer Motion
+
+## 🚀 Demo
+
+[Live Demo](https://your-vercel-url.vercel.app) - Deploy your own instance on Vercel!
+
+## 🛠️ Tech Stack
+
+- **Framework:** [Next.js 16](https://nextjs.org/) with App Router
+- **UI Library:** [React 19](https://react.dev/)
+- **Styling:** [Tailwind CSS 4](https://tailwindcss.com/) with dark mode support
+- **Components:** ShadCN-style component architecture
+- **Animations:** [Framer Motion](https://www.framer.com/motion/)
+- **AI Integration:** OpenAI API (GPT-4.1-mini + DALL-E 3)
+- **Deployment:** Vercel-ready
+
+## 📁 Project Structure
+
+```
+ai-social-media-studio/
+├── src/
+│   ├── app/              # Next.js App Router pages
+│   │   ├── api/          # API routes for AI generation
+│   │   ├── layout.tsx    # Root layout with theme provider
+│   │   └── page.tsx      # Main studio page
+│   ├── components/       # React components
+│   │   ├── studio.tsx    # Main studio interface
+│   │   ├── theme-toggle.tsx
+│   │   ├── slide-card.tsx
+│   │   └── ui/           # Reusable UI components
+│   ├── context/          # React context providers
+│   │   └── theme-context.tsx
+│   ├── lib/              # Utility functions
+│   │   └── ai.ts         # OpenAI integration
+│   └── types/            # TypeScript type definitions
+├── public/               # Static assets
+├── tailwind.config.js    # Tailwind configuration with dark mode
+├── next.config.ts        # Next.js configuration
+└── package.json
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🏁 Getting Started
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Prerequisites
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Node.js 18+ 
+- OpenAI API key
 
-## Learn More
+### Installation
 
-To learn more about Next.js, take a look at the following resources:
+1. Clone the repository:
+```bash
+git clone https://github.com/yourusername/ai-social-media-studio.git
+cd ai-social-media-studio
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+2. Install dependencies:
+```bash
+npm install
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+3. Set up environment variables:
+```bash
+cp .env.example .env.local
+```
 
-## Deploy on Vercel
+4. Add your OpenAI API key to `.env.local`:
+```bash
+OPENAI_API_KEY=your_openai_api_key_here
+OPENAI_TEXT_MODEL=gpt-4.1-mini
+OPENAI_IMAGE_MODEL=gpt-image-1
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+5. Run the development server:
+```bash
+npm run dev
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+6. Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+## 🌍 Environment Variables
+
+| Variable | Required | Description |
+|----------|----------|-------------|
+| `OPENAI_API_KEY` | Yes | Your OpenAI API key |
+| `OPENAI_TEXT_MODEL` | No | Text generation model (default: gpt-4.1-mini) |
+| `OPENAI_IMAGE_MODEL` | No | Image generation model (default: gpt-image-1) |
+
+## 🚢 Deployment
+
+### Vercel (Recommended)
+
+1. Push your code to GitHub
+2. Go to [Vercel](https://vercel.com/new) and import your repository
+3. Add your environment variables in Project Settings
+4. Deploy!
+
+### Other Platforms
+
+The app can be deployed to any platform that supports Next.js:
+
+```bash
+npm run build
+```
+
+## 🔒 Security
+
+- ✅ API keys are **server-side only** - never exposed to the client
+- ✅ All AI calls go through Next.js API routes
+- ✅ Environment variables are properly secured
+
+## 🎨 Customization
+
+### Themes
+The app supports both dark and light modes. The theme toggle uses Tailwind's `dark:` modifier classes and persists to localStorage.
+
+### Styling
+Built with Tailwind CSS 4. Customize colors, spacing, and components in:
+- `tailwind.config.js` - Theme configuration
+- `src/app/globals.css` - Global styles
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## 📝 License
+
+This project is licensed under the MIT License.
+
+## 🙏 Acknowledgments
+
+- [OpenAI](https://openai.com/) for the amazing AI models
+- [Next.js](https://nextjs.org/) team for the fantastic framework
+- [Tailwind CSS](https://tailwindcss.com/) for the utility-first CSS framework
+- [ShadCN](https://ui.shadcn.com/) for the beautiful component patterns
+
+---
+
+**Made with ❤️ using Next.js + OpenAI**
