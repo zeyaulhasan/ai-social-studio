@@ -20,9 +20,6 @@ Transform your ideas into stunning, viral social media content with AI. Generate
 - 📋 **Copy to Clipboard** - Easy copying of slide content
 - 🎬 **Smooth Animations** - Beautiful transitions powered by Framer Motion
 
-## 🚀 Demo
-
-[Live Demo](https://your-vercel-url.vercel.app) - Deploy your own instance on Vercel!
 
 ## 🛠️ Tech Stack
 
